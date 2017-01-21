@@ -1,0 +1,64 @@
+import java.awt.List;
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Scanner;
+import java.util.Set;
+import java.util.SortedSet;
+
+public class SixN_Cryption {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		boolean flag=false;
+		while(sc.hasNext()){
+			if(flag)sc.nextLine();
+			else flag=true;
+			int en=sc.nextInt();
+			int n=sc.nextInt();
+			sc.nextLine();
+			long num[]=new long[n];
+			for(int k=0;k<n;k++){
+				num[k]=Long.parseLong(sc.nextLine());
+				
+			}
+			Arrays.sort(num);
+			
+			ArrayList<Long>bigPrime= primeFactors(num[0]);
+			Collections.sort(bigPrime);
+			long bigP=bigPrime.get(bigPrime.size()-1);
+			long sum=0;
+			for(int i=0;i<n;i++){
+				sum+=num[i]/bigP;
+			}
+			System.out.println("Output: "+(en-sum));
+		}
+
+	}
+	public static long primeFactors(long num) {
+		
+        long pFactor = 1L;
+
+        for(long i = 3L; i <= num / i; ) 
+        {
+            if( num % i == 0 ) {
+                pFactor = i;
+                num = num / i;
+            }
+            else {
+                i += 2;
+            }
+        }
+        if( pFactor < num ) { pFactor = num; }
+
+        return pFactor;
+    }
+
+
+	
+
+}

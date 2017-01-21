@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class LectureNotes {
+	public static void main(String[] args){
+		 Scanner in = new Scanner(System.in);
+	        int n = in.nextInt();
+	        int k = in.nextInt();
+	        int friends[] = new int[k];
+	        char sleepy[]=in.nextLine().toCharArray();
+	        boolean flag=false;
+	        for(int f=0;f<k;f++){
+	        	friends[f]=in.nextInt();
+	        }
+	        for(int friends_i=0; friends_i < k; friends_i++){
+	            if(sleepy[friends[friends_i]-1]=='0'){
+	            	flag=true;
+	            	break;
+	            }
+	        }
+	        System.out.println((flag?"YES":"NO"));
+	}
+}

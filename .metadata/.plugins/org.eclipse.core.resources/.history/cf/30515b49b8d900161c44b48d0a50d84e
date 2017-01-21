@@ -1,0 +1,74 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.StringTokenizer;
+
+public class LuckyNumber {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		cFastScanner sc=new cFastScanner();
+		int n=sc.nextInt();
+		String numbers=sc.nextToken();
+		long counter=0;
+		for (int i = 0; i < n; i++) {
+			for (int j = i; j < n; j++) {
+				StringBuilder stB = new StringBuilder();
+				for (int k = i; k <= j; k++) {
+					stB.append(numbers.charAt(k));
+				}
+				if(Integer.parseInt(stB.toString().trim())%8==0){
+					counter=(counter+1)%1000000007;
+				}
+			}
+		}
+		System.out.println(counter);
+
+	}
+
+}
+class cFastScanner {
+	BufferedReader br;
+	StringTokenizer st;
+
+	public cFastScanner(String s) {
+		try {
+			br = new BufferedReader(new FileReader(s));
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public cFastScanner() {
+		br = new BufferedReader(new InputStreamReader(System.in));
+	}
+
+	String nextToken() {
+		while (st == null || !st.hasMoreElements()) {
+			try {
+				st = new StringTokenizer(br.readLine());
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return st.nextToken();
+	}
+
+	int nextInt() {
+		return Integer.parseInt(nextToken());
+	}
+
+	long nextLong() {
+		return Long.parseLong(nextToken());
+	}
+
+	double nextDouble() {
+		return Double.parseDouble(nextToken());
+	}
+}

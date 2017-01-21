@@ -1,0 +1,31 @@
+package amit.diu.mathematics;
+
+import java.util.Scanner;
+
+public class nCrtable {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int T=sc.nextInt();
+		while(T-->0){
+			int n=sc.nextInt();
+			for(int i=0;i<=n;i++){
+				System.out.print(nCr(n, i)+" ");
+			}
+			System.out.println();
+		}
+		
+
+	}
+	private static long fact(int n){
+		if(n==1||n==0) return 1;
+		else
+			return (n*fact(n-1)%1000000000);
+		
+	}
+	private static long nCr(int n, int r){
+		return fact(n)/(fact(n-r)*fact(r));
+	}
+
+}

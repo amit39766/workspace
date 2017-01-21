@@ -1,0 +1,14 @@
+
+public class FibonacciSum {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	static long fibonacci(int ith){
+		double number=Math.pow(1.618034, ith);
+		long num=Math.round(number);
+		return num;
+	}
+
+}

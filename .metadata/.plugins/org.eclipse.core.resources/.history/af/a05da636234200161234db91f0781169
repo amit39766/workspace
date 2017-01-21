@@ -1,0 +1,17 @@
+package amit.diu.string;
+
+import java.util.Scanner;
+
+public class StirngToken {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String rex="[W^!^,^?^.^_^'^@]+";
+		String[] str=(new Scanner(System.in)).nextLine().split(rex);
+		System.out.println(str.length);
+		for(String st:str)System.out.println(st);
+		
+
+	}
+
+}

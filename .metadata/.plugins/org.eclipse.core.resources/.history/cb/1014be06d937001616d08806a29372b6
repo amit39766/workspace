@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class CompleteTree {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int s1=sc.nextInt();
+		int s2=sc.nextInt();
+		int lev1=0;
+		int lev2=0;
+		double tem=0;
+		for(int i=0;;i++){
+			double x=Math.pow(2, i);
+			tem+=x;
+			if(tem<(s1-x)||tem==s1){
+				lev1=i;
+				break;
+			}
+			
+		}
+		tem=0;
+		for(int j=0;;j++){
+			double x=Math.pow(2, j);
+			tem+=x;
+			if(tem<(s1-x)||tem==s1){
+				lev2=j;
+				break;
+			}
+		}
+		System.out.println(lev1+" "+lev2);
+
+	}
+
+}

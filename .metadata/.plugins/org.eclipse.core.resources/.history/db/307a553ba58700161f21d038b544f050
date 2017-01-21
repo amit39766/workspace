@@ -1,0 +1,28 @@
+package uvaOnlineJudge;
+
+import java.util.Scanner;
+import java.util.Stack;
+import java.util.ArrayList;
+
+public class uva_101 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		ArrayList<Stack<Integer>> st=new ArrayList<>(n);
+		for(int i=0;i<n;i++){
+			st.add(new Stack<>());
+			st.get(i).push(i);
+		}
+		sc.nextLine();
+		String comm=sc.nextLine();
+		while(!comm.equals("quit")){
+			String[] command=comm.split(" ");
+			
+		}
+		String comm=sc.nextLine();
+
+	}
+
+}

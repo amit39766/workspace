@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Cryptography {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int prime[]=new int[15002];
+		prime[1]=2;
+        boolean[] isPrime = new boolean[15003];
+        for (int i = 2; i <= 15002; i++) {
+            isPrime[i] = true;
+        }
+        for (int factor = 2; factor*factor <= 15000; factor++) 
+            if (isPrime[factor]) {
+                for (int j = factor; factor*j <= n; j++) {
+                    isPrime[factor*j] = false;
+                }
+            }
+
+        for (int i = 2,j=1; i <= n; i++) {
+            if (isPrime[i]) prime[j++]=i;
+        }
+        for(int i=0;i<n;i++){
+        	int or=sc.nextInt();
+        	System.out.println(prime[or]);
+        }
+    }
+}
+
+

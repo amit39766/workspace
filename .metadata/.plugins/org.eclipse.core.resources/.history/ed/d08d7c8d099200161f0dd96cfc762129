@@ -1,0 +1,52 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
+public class ProblemF {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//BufferedReader sc=new BufferedReader(new InputStreamReader(System.in));
+		//Scanner sc=new Scanner(System.in);
+		FastScanner sc=new FastScanner();
+		int T=sc.nextInt();
+		
+		for(int t=0;t<T;t++){
+			Map<Long,Long> pid=new HashMap<>();
+			Map<Long,Long>rid=new HashMap<>();
+			Set<Long> usedRe=new HashSet<>();
+			int Q=sc.nextInt();
+			for(int q=0;q<Q;q++){
+				if(sc.nextInt()==1){
+					long pi=sc.nextLong();
+					long ri=sc.nextLong();
+					if(usedRe.contains(ri)){
+						System.out.println("N");
+					}else{
+						pid.put(pi, ri);
+						usedRe.add(ri);
+						rid.put(ri, pi);
+					}
+				}
+				else{
+					long ri=sc.nextLong();
+					long pi=sc.nextLong();
+					if(usedRe.contains(ri)){
+						System.out.println(rid.get(ri));
+						usedRe.remove(ri);
+						pid.remove(rid.get(ri));
+						rid.remove(ri);
+					}
+					else{
+						System.out.println("F");
+					}
+				}
+			}
+		}
+
+	}
+
+}

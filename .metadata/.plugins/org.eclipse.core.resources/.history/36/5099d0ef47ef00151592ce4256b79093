@@ -1,0 +1,26 @@
+package takeOff;
+
+import java.util.BitSet;
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class bitFieldProblem {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		String str=sc.nextLine();
+		String patern="/0000000|1111111/";
+		Pattern strparter= Pattern.compile(patern);
+		Matcher match=strparter.matcher(str);
+		if(match.find()){
+			System.out.print("YES");
+		}
+		else
+			System.out.println("NO");
+	
+
+	}
+
+}

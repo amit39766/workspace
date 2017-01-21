@@ -1,0 +1,65 @@
+import java.awt.image.BufferedImage;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+public class uri_2222 {
+	private static ArrayList<Set<Integer>> al;
+	public static void main(String[] args) throws Exception, IOException {
+		// TODO Auto-generated method stub
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		int n;
+		n=Integer.parseInt(br.readLine());
+		while(n!=0){
+			al=new ArrayList<>();
+			for(int i=0;i<n;i++){
+				Set<Integer> st=new HashSet<>(); 
+				String mi[]=br.readLine().split(" ");
+				int m=Integer.parseInt(mi[0]);
+				for(int j=1;j<=m;j++){
+					st.add(Integer.parseInt(mi[j]));
+				}
+			}
+			int q=Integer.parseInt(br.readLine());
+			for(int k=0;k<q;k++){
+				String qi[]=br.readLine().split(" ");
+				int x=Integer.parseInt(qi[1]);
+				int y=Integer.parseInt(qi[2]);
+				if(qi[0].equals("1")){
+					System.out.println(intersec(x,y));
+				}else{
+					System.out.println(union(x,y));
+				}
+			}
+		}
+
+	}
+
+	private static int union(int x, int y) {
+		// TODO Auto-generated method stub
+		Set<Integer> stX=al.get(x-1);
+		Set<Integer> stY=al.get(y-1);
+		int num=0;
+		for(int el:stX){
+			if(stY.contains(el)) num++;
+		}
+		return num;
+	}
+
+	private static int intersec(int x, int y) {
+		// TODO Auto-generated method stub
+		Set<Integer> stX=al.get(x-1);
+		Set<Integer> stY=al.get(y-1);
+		Set<Integer> xy=new HashSet<>();
+		for(int el:stX){
+			xy.add(el);
+		}
+		for(int el:stY){
+			xy.add(el);
+		}
+		return xy.size();
+	}
+
+}

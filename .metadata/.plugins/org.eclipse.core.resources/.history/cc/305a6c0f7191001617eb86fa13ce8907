@@ -1,0 +1,37 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class MatXoR{
+
+    public static void main(String[] args) throws NumberFormatException, IOException {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        //Scanner sc=new Scanner(System.in);
+        BufferedReader sc=new BufferedReader(new InputStreamReader(System.in));
+        String str=sc.readLine();
+        StringTokenizer stk=new StringTokenizer(str, " ");
+        int n=Integer.parseInt(stk.nextToken());
+        long m=Long.parseLong(stk.nextToken());
+        int mod=1000000007;
+        Long matx[]=new Long[n];
+        Long[] maty;
+        for(int i=0;i<n;i++){
+           matx[i]=Long.parseLong(sc.readLine().trim());
+        }
+        for(long i=1;i<m;i++){
+        	maty=new Long[n];
+            for(int j=0;j<n-1;j++){
+                	maty[j]=(matx[j]^matx[j+1])%mod;
+                    
+            }
+            maty[n-1]=(matx[n-1]^matx[0])%mod;            
+            matx=maty;
+        }
+        for(int j=0;j<n;j++){
+            System.out.print(matx[j]+" ");
+        }
+        System.out.println();
+    }
+}

@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class NumberOfaCertianPrimeNumbersinFactorialOfaNumber {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter the factorial nubmer : ");
+		
+		int N=sc.nextInt();
+		System.out.print("Enter the prime number : ");
+		int p=sc.nextInt();
+		int numberOfP=numberOfPinN(N,p);
+
+		System.out.println(n+"! পিছনের জিরোর সংখ্যা হল : "+zeros+" টি " );
+		
+
+	}
+
+	private static int numberOfPinN(int n,int p) {
+		int z=0;
+		while(n/p==0){
+			z+=p;
+			z++;
+		}
+		return z;
+	}
+
+}

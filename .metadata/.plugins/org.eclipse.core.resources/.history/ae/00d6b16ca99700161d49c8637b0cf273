@@ -1,0 +1,57 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.StringTokenizer;
+
+public class KickTheFootball {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int T=sc.nextInt();
+		for(int t=1;t<=T;t++){
+			double v0=sc.nextDouble();
+			double ang=Math.toRadians(sc.nextDouble());		
+			int n=sc.nextInt();
+			int xi[]=new int[n];
+			int yi[]=new int[n];
+			int yii[]=new int[n];
+			String names[]=new String[n];
+			boolean flag=false;
+			double vx=v0*Math.cos(ang);
+			double vy=v0*Math.sin(ang);
+			String playerName="";
+			for(int i=0;i<n;i++){
+					xi[i]=sc.nextInt();
+					yi[i]=sc.nextInt();
+					yii[i]=sc.nextInt();
+					names[i]=sc.next();
+					
+			}
+			int first=Integer.MAX_VALUE;
+			for(int i=0;i<n;i++){
+				
+				int x=xi[i];
+				int y1=yi[i];
+				int y2=yii[i];
+				double sec=x/vx;
+				double y=sec*(vy-(0.5*9.8*sec));
+				if(y>=y1&&y<=y2){
+					flag=true;
+					
+					if(y1<first){
+						first=y1;
+						playerName=names[i];
+					}
+					
+				}
+			}
+			System.out.println((flag)?"Case "+t+": Ball is received by "+playerName:"Case "+t+": No one received the ball");
+		}
+
+	}
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Google Code Jam/src/amit/diu/Test&apos; to &apos;Test.txt&apos;" description="Rename resource &apos;Test&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/amit/diu/Test" name="Test.txt" stamp="1460054425144" updateReferences="true"/>
+</session>

@@ -1,0 +1,53 @@
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
+public class TailorShop {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int p=sc.nextInt();
+		//Set<Integer> used=new HashSet<>();
+		int expenses[]=new int[n];
+		for(int i=0;i<n;i++){
+			expenses[i]=sc.nextInt();
+		}
+		Arrays.sort(expenses);
+		int numBtn=0;
+		int counter=0;
+		int tempDiv=0;
+		for(int i=0;i<n;i++){
+			int reminder=expenses[i]%p;
+			int dividen=expenses[i]/p;
+	
+			if(reminder==0){
+				if(counter==dividen){
+					counter=dividen+1;
+					numBtn+=counter;
+				}
+				else{
+					counter=dividen;
+					numBtn+=dividen;
+				}
+				
+			}
+			else{
+				if(tempDiv==dividen){
+					counter=dividen+2;
+				}else{
+					counter=dividen+1;
+				}
+				
+				numBtn+=counter;
+			}
+			tempDiv=dividen;
+		}
+		System.out.println(numBtn);
+		
+
+	}
+
+}

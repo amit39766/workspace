@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class AppleOrange {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner in = new Scanner(System.in);
+        int s = in.nextInt();
+        int t = in.nextInt();
+        int a = in.nextInt();
+        int b = in.nextInt();
+        int m = in.nextInt();
+        int n = in.nextInt();
+        int appls=0;
+        int orangs=0;
+        for(int apple_i=0; apple_i < m; apple_i++){
+        	int d=in.nextInt();
+            if(d>=s-a&&d<=t-a)appls++;
+        }
+        for(int orange_i=0; orange_i < n; orange_i++){
+        	int d=in.nextInt();
+        	if(d<0){
+        		d=Math.abs(d);
+        		if(d<=b-s&&d>=b-t)orangs++;
+        	}
+            
+        }
+        System.out.println(appls+"\n"+orangs);
+        
+
+	}
+
+}

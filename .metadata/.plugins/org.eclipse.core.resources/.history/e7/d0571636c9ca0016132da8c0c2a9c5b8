@@ -1,0 +1,17 @@
+
+public class MatrixRotation {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int [][] array=new int[33][5];
+		System.out.println(array.length);
+
+	}
+	public static boolean[][] rotate90(boolean matrix[][]){
+		int column=matrix[0].length;
+		int row=matrix.length;
+		return matrix;
+	}
+
+}
+

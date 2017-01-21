@@ -1,0 +1,119 @@
+package amit.diu;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Set;
+
+public class Solution2 {
+
+    static int[][] graph;
+    static List<int[]> cycles = new ArrayList<int[]>();
+    static Map<HashMap<Integer, Integer>, Integer> edgeWeight = new HashMap<HashMap<Integer, Integer>, Integer>();
+    static Set<HashSet<Integer>> set=new HashSet<HashSet<Integer>>();
+
+
+    public static void main(String[] args) {
+    	Scanner sc=new Scanner(System.in);
+    	int N=sc.nextInt();
+    	int M=sc.nextInt();
+    	graph=new int[M][2];
+    	for(int n=1;n<=M;n++){
+    		int node1=sc.nextInt();
+    		int node2=sc.nextInt();
+    		graph[n-1][0]=node1;
+    		graph[n-1][1]=node2;
+		    HashMap<Integer, Integer> arg0 = new HashMap<>();
+			HashMap<Integer, Integer> arg1 = new HashMap<>();
+			arg0.put(node1, node2);
+			arg1.put(node2, node1);
+			edgeWeight.put(arg0, n);
+			edgeWeight.put(arg1,n);
+    	}
+        for (int i = 0; i < graph.length; i++)
+            for (int j = 0; j < graph[i].length; j++)
+            {
+                findNewCycles(new int[] {graph[i][j]});
+            }
+        int maxcycle=0;
+        for (int[] cy : cycles)
+        {
+            String s = "" + cy[0];
+
+            for (int i = 1; i < cy.length; i++)
+            {
+               s += "," + cy[i];
+           }
+
+            o(s);
+        	if(cy.length>=4){
+        		maxcycle++;
+        	}
+        }
+        o(String.valueOf(maxcycle));
+
+    }
+
+    static void findNewCycles(int[] path)
+    {
+            int n = path[0];
+            int x;
+            int[] sub = new int[path.length + 1];
+
+            for (int i = 0; i < graph.length; i++)
+                for (int y = 0; y <= 1; y++)
+                    if (graph[i][y] == n)
+                    //  edge refers to our current node
+                    {
+                        x = graph[i][(y + 1) % 2];
+                        if (!visited(x, path))
+                        //  neighbor node not on path yet
+                        {
+                            sub[0] = x;
+                            System.arraycopy(path, 0, sub, 1, path.length);
+                            //  explore extended path
+                            findNewCycles(sub);
+                        }
+                        else if ((path.length > 2) && (x == path[path.length - 1]))
+                        //  cycle found
+                        {	
+                        	HashSet<Integer> st=new HashSet<>();
+                            for(int k=0;k<path.length-1;k++){
+                            	HashMap<Integer, Integer> key = new HashMap<>();
+                    			key.put(path[k], path[k+1]);
+                    			int p = edgeWeight.get(key);
+                    			st.add(p);
+                            }
+                            if(!set.contains(st)){
+                            	cycles.add(path);
+                            	set.add(st);
+                            }
+                        }
+                    }
+    }
+
+
+    static void o(String s)
+    {
+        System.out.println(s);
+    }
+    static Boolean visited(int n, int[] path)
+    {
+        Boolean ret = false;
+
+        for (int p : path)
+        {
+            if (p == n)
+            {
+                ret = true;
+                break;
+            }
+        }
+
+        return ret;
+    }
+
+}
+

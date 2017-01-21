@@ -1,0 +1,31 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class DishWash {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int k=sc.nextInt();
+		int pi[]=new int[n];
+		int di[]=new int[n];
+		for(int i=0;i<n;i++){
+			pi[i]=sc.nextInt();
+		}
+		sc.nextLine();
+		for(int i=0;i<n;i++){
+			di[i]=sc.nextInt();
+		}
+		Arrays.sort(pi);
+		Arrays.sort(di);
+		int max=0;
+		for(int i=0;i<k;i++){
+			max+=pi[i];
+			max-=di[n-i];
+		}
+		System.out.println(((max<0)?0:max));
+		
+	}
+
+}

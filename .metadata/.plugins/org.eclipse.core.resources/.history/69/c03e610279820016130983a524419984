@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+public class GridLandMetro {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int m=sc.nextInt();
+		int k=sc.nextInt();
+		boolean grid[][]=new boolean[n+1][m+1];
+
+	}
+
+}

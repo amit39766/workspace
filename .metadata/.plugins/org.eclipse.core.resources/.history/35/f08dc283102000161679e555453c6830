@@ -1,0 +1,26 @@
+package amit.diu;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//		String st=String.valueOf()
+		Scanner in=new Scanner(System.in);
+		int node=in.nextInt();
+		//in.close();
+//		for(int i=1;i<=node;i++){
+//			for(int k=1;k<=node;k++){
+//				
+//			}
+//		}
+		String st="1";
+		String end="4";
+		Search sch=new Search();
+		sch.CallMe(st, end, node);
+		System.out.println(sch.sum);
+
+	}
+
+}

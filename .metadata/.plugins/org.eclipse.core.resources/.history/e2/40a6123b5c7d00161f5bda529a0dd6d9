@@ -1,0 +1,18 @@
+import java.util.Scanner;
+import java.util.Vector;
+
+public class InputGraph {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int nn=sc.nextInt();
+		int ne=sc.nextInt();
+		Vector<Integer> edgs[] = null;
+		Vector<Integer> cost[];
+		edgs[1].addElement(12);
+		System.out.println(edgs[1].get(0));
+
+	}
+
+}

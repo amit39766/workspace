@@ -1,0 +1,16 @@
+package uvaOnlineJudge;
+
+import java.util.Scanner;
+
+public class BitOperation {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter value of S and N : S N ");
+		int S=sc.nextInt();
+		int N=sc.nextInt();
+
+	}
+
+}

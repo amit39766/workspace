@@ -1,0 +1,14 @@
+package uvaOnlineJudge;
+
+import java.math.BigInteger;
+
+public class baseChange {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String str="FFFFFF";int X=16,Y=10;
+		System.out.println(new BigInteger(str, X).toString(37));
+
+	}
+
+}

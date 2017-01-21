@@ -1,0 +1,14 @@
+import java.util.Scanner;
+
+public class uri_1005 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		double a=sc.nextDouble();
+		double b=sc.nextDouble();
+		System.out.printf("MEDIA = %.5f%n",((a*3.5d+b*7.5d)/11));
+		
+	}
+
+}

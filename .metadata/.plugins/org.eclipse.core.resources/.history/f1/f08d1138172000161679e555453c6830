@@ -1,0 +1,55 @@
+package amit.diu;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Set;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//		String st=String.valueOf()
+		Scanner in=new Scanner(System.in);
+		int node=in.nextInt();
+		 Map<String,Integer> cmap=new HashMap<String,Integer>();
+	        Graph graph[] = new Graph[node+1];
+	        Graph gr=new Graph();
+	        for(int c=1;c<=node;c++){
+	        	cmap.put(String.valueOf(c),in.nextInt());
+	        }
+	        for(int n=1;n<node;n++){
+	        	String node1=String.valueOf(in.nextInt());
+	        	String node2=String.valueOf(in.nextInt());
+	        	gr.addEdge(node1, node2);
+	        }
+	        for(int c=1;c<=node;c++){
+	        	graph[c]=gr;
+	        }
+		//in.close();
+	        int sum=0;
+		for(int i=5;i<=node;i++){
+			for(int k=1;k<=node;k++){
+				String st=String.valueOf(i);
+				String end=String.valueOf(k);
+				Search sch=new Search();
+				ArrayList<String> strList=sch.CallMe(st, end, graph[i]);
+				System.out.println(strList);
+				Set<Integer>sett=new HashSet<Integer>();
+				 sum=1;
+				for(String str:strList){
+					sett.add(cmap.get(str));
+				}
+				sum+=sett.size();
+				strList.clear();
+				sett.clear();
+			}
+			System.out.println(sum);
+		}
+
+
+	}
+
+}

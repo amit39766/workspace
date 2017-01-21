@@ -1,0 +1,109 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.StringTokenizer;
+
+public class ProblemH {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		hFastScanner sc=new hFastScanner();
+		int T=sc.nextInt();
+		for(int t=1;t<=T;t++){
+			int N=sc.nextInt();
+			int Q=sc.nextInt();
+			int ele[]=new int[N];
+			for(int n=0;n<N;n++){
+				ele[n]=sc.nextInt();
+			}
+			ArrayList<ArrayList<Integer>> subArrays=new ArrayList<>();
+			for (int i = 0; i < ele.length; i++)
+		    {
+		        // j is the number of elements which should be printed
+		        for (int j = i; j < ele.length; j++)
+		        {
+		        	ArrayList<Integer> el=new ArrayList<>();
+		            // print the array from i to j
+		            for (int k = i; k <= j; k++)
+		            {
+		            	el.add(ele[k]);
+		                //System.out.print(items[k]);
+		            }
+		            Collections.sort(el);
+		            //System.out.println();
+		            subArrays.add(el);
+		        }
+		    }
+			Collections.sort(subArrays, new Comparator<ArrayList<Integer>>() {
+
+				@Override
+				public int compare(ArrayList<Integer> o1, ArrayList<Integer> o2) {
+					// TODO Auto-generated method stub
+					return o1.size()-o2.size();
+				}
+			});
+			System.out.println(subArrays);
+			for(int q=0;q<Q;q++){
+				int L=sc.nextInt();
+				int R=sc.nextInt();
+				System.out.println(maxlen(L,R,ele));
+			}
+		}
+		
+	}
+
+	private static int maxlen(int l, int r, int[] ele) {
+		// TODO Auto-generated method stub
+		
+		return 0;
+	}
+	
+}
+
+class hFastScanner {
+	BufferedReader br;
+	StringTokenizer st;
+
+	public hFastScanner(String s) {
+		try {
+			br = new BufferedReader(new FileReader(s));
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public hFastScanner() {
+		br = new BufferedReader(new InputStreamReader(System.in));
+	}
+
+	String nextToken() {
+		while (st == null || !st.hasMoreElements()) {
+			try {
+				st = new StringTokenizer(br.readLine());
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return st.nextToken();
+	}
+
+	int nextInt() {
+		return Integer.parseInt(nextToken());
+	}
+
+	long nextLong() {
+		return Long.parseLong(nextToken());
+	}
+
+	double nextDouble() {
+		return Double.parseDouble(nextToken());
+	}
+}

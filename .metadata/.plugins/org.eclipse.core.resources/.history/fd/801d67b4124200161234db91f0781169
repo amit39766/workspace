@@ -1,0 +1,28 @@
+package amit.diu.string;
+
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.Scanner;
+
+public class StringCompare {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		String st=sc.nextLine();
+		int K=sc.nextInt();
+		boolean k=true;
+		LinkedList<String> sl=new LinkedList<>();
+		int i=0;
+		while(i+K<=st.length()-1){
+			
+			sl.add(st.substring(i, K+i));
+			i++;
+		}
+		Collections.sort(sl);
+		System.out.println(sl.getFirst()+"\n"+sl.getLast());
+		
+
+	}
+
+}

@@ -1,0 +1,13 @@
+
+public class InputSpeedbyScanner {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		long startTime=System.nanoTime();
+		for(int i=1;i<Integer.MAX_VALUE-20000;i=i+5000)
+			System.out.println("Hello "+i);
+		long endTime=System.nanoTime();
+		System.out.println("Run Time : ".format("%.10f %s",(endTime-startTime)/10e9,"sec"));
+	}
+
+}

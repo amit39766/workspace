@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class LadyBugs {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	        Scanner in = new Scanner(System.in);
+	        int Q = in.nextInt();
+	        for(int a0 = 0; a0 < Q; a0++){
+	            int n = in.nextInt();
+	            String b = in.next();
+	        }
+	        
+	    }
+
+
+}

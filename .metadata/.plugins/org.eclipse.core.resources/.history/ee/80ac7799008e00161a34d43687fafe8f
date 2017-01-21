@@ -1,0 +1,53 @@
+import java.awt.image.BufferedImage;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.StringTokenizer;
+
+public class uri_2222 {
+	private static ArrayList<Set<Integer>> al;
+	public static void main(String[] args) throws Exception, IOException {
+		// TODO Auto-generated method stub
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		int n;
+		n=Integer.parseInt(br.readLine());
+		while(n!=0){
+			al=new ArrayList<>();
+			for(int i=0;i<n;i++){
+				Set<Integer> st=new HashSet<>(); 
+				String mi[]=br.readLine().split(" ");
+				int m=Integer.parseInt(mi[0]);
+				for(int j=0;j<m;j++){
+					st.add(Integer.parseInt(mi[j+1]));
+				}
+			}
+			int q=Integer.parseInt(br.readLine());
+			for(int k=0;k<q;k++){
+				String qi[]=br.readLine().split(" ");
+				int x=Integer.parseInt(qi[1]);
+				int y=Integer.parseInt(qi[2]);
+				if(qi[0].equals("1")){
+					System.out.println(intersec(x,y));
+				}else{
+					System.out.println(union(x,y));
+				}
+			}
+		}
+
+	}
+
+	private static char[] union(int x, int y) {
+		// TODO Auto-generated method stub
+		Set<Integer> st=al.
+		return null;
+	}
+
+	private static char[] intersec(int x, int y) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

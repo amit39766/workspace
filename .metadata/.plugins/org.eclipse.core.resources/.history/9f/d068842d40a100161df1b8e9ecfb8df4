@@ -1,0 +1,15 @@
+package uvaOnlineJudge;
+
+import java.util.Scanner;
+
+public class formating {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		double d = sc.nextDouble();
+		System.out.printf("%.3f\n", d);
+
+	}
+
+}

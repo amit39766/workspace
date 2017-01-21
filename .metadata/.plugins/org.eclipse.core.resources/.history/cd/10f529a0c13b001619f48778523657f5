@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class GrashField {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int R=sc.nextInt();
+		int L=sc.nextInt();
+		int W=sc.nextInt();
+		if(R>=L/2){
+			System.out.println(2*Math.PI*R*R);
+		}
+		else if(R>W/2){
+			double ex=R-W/2;
+			double angle= Math.asin((R-ex)/R);
+			double ang=Math.PI-angle;
+			double len=2*R*Math.cos(ang);
+			double triArea=((R-ex)*len)/2;
+			double secArea=len*R/2;
+			double segArea=secArea-triArea;
+			double Area=2*Math.PI*R*R-(2*segArea);
+			System.out.println(Area);
+		}
+		else{
+			System.out.println(2*Math.PI*R*R);
+		}
+
+	}
+
+}

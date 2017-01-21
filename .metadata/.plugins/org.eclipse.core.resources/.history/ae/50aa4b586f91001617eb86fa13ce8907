@@ -1,0 +1,28 @@
+package uvaOnlineJudge;
+
+import java.util.Scanner;
+
+public class uva_10550 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int pos=sc.nextInt();
+		int c1=sc.nextInt();
+		int c2=sc.nextInt();
+		int c3=sc.nextInt();
+		while(pos!=0||c1!=0||c2!=0||c3!=0){
+			int turns=1080;
+			turns+=(pos - c1) >= 0 ? (pos - c1) * 9 : (pos - c1 + 40) * 9;
+			turns+=(c2 - c1)>= 0 ? (c2 - c1) * 9 : (c2 - c1 + 40) * 9;
+			turns += (c2 - c3) >= 0 ? (c2 - c3) * 9 : (c2 - c3 + 40) * 9;
+			System.out.println(turns);
+			pos=sc.nextInt();
+			c1=sc.nextInt();
+			c2=sc.nextInt();
+			c3=sc.nextInt();
+		}
+
+	}
+
+}

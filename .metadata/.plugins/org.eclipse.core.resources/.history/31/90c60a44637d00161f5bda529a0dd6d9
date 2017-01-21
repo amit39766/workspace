@@ -1,0 +1,33 @@
+import java.util.Scanner;
+import java.util.Vector;
+
+public class InputGraph {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int nn=sc.nextInt();
+		int ne=sc.nextInt();
+		Vector<Integer>[] edgs = new  Vector[100000] ;
+		Vector<Integer> cost[]=new Vector[100000];
+		for(int i=1;i<=ne;i++){
+			int x,y;
+			x=sc.nextInt();
+			y=sc.nextInt();
+			int l=sc.nextInt();
+			edgs[x].add(y);
+			edgs[y].add(x);
+			cost[x].add(l);
+			cost[y].add(l);
+		}
+		for(int i=1;i<=nn;i++){
+			System.out.print(i+">>");
+			for(int j=0;j<edgs[i].size();j++)
+				System.out.print(edgs[i].get(j)+">>");
+			System.out.println("X");
+		}
+		
+
+	}
+
+}

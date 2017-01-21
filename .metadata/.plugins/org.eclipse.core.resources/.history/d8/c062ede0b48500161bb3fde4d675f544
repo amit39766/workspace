@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class AsteriskExpression {
+	static long mod=1000000007;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		String str=sc.nextLine();
+		//StringBuilder sb=new StringBuilder(str);
+		String regex="^([0-9](\\*|\\*\\*))+[0-9]$";
+		if(str.matches(regex)){
+			String num[]=str.split("(\\*|\\*\\*)");
+			String nota[]=str.split("[0-9]+");
+			long num1=Long.parseLong(num[0])%mod;
+			for(int i=1;i<num.length;i++){
+				long num2=Long.parseLong(num[i])%mod;
+				if(nota[i]=="**"){
+					num1=bigmod(num1,num2);
+				}else{
+					
+				}
+			}
+			System.out.println("YES");
+		}else{
+			System.out.println("Syntax Error");
+		}
+
+	}
+
+	private static long bigmod(long num1, long num2) {
+		// TODO Auto-generated method stub
+		if(num2==0)return 1%mod;
+		long x=bigmod(num1,num2/2);
+		x=(x*x)%mod;
+		if(num2%2==1)x=(x*num1)%mod;
+		return x;
+		
+	}
+
+}

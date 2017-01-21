@@ -1,0 +1,42 @@
+package uvaOnlineJudge;
+
+import java.util.Scanner;
+
+public class boilEge {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc1=new Scanner(System.in);
+		int T=sc1.nextInt();
+		sc1.close();
+		Scanner sc=new Scanner(System.in);
+		for(int i=0;i<T;i++){
+			int n,P,Q;
+			String[] npq=sc.nextLine().split(" ");
+			n=Integer.parseInt(npq[0]);
+			P=Integer.parseInt(npq[1]);
+			Q=Integer.parseInt(npq[2]);
+			int[] eggWeight=new int[n];
+			for(int c=0;c<n;c++)
+				eggWeight[c]=sc.nextInt();
+			for(int c=0;c<n;c++)
+				System.out.println(""+eggWeight[c]);
+			 for (int m = 0 ; m <n-1; m++)
+			  {
+			    for (int d=0;d<n-m-1;d++)
+			    {
+			      if (eggWeight[d]>eggWeight[d+1])
+			      {
+			        int swap=eggWeight[d];
+			        eggWeight[d]=eggWeight[d+1];
+			        eggWeight[d+1]=swap;
+			      }
+			    }
+			  }
+		}
+		
+		
+
+	}
+
+}

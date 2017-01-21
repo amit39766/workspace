@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;ami.diu.Thread.java&apos; to &apos;Synch.java&apos;&#x0D;&#x0A;- Original project: &apos;Practice&apos;&#x0D;&#x0A;- Original element: &apos;ami.diu.Thread.java&apos;&#x0D;&#x0A;- Renamed element: &apos;ami.diu.Synch.java&apos;" description="Rename compilation unit &apos;Thread.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;ami.diu{Thread.java" name="Synch.java" references="false" stamp="1464004499006" version="1.0"/>
+</session>

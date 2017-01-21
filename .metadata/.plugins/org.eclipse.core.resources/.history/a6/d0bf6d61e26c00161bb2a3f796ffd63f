@@ -1,0 +1,25 @@
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Scanner;
+
+public class Problem2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int T=sc.nextInt();
+		dobule A=sc.nextDouble();
+		dobule B=sc.nextDouble();
+		long N=sc.nextLong();
+		int K=sc.nextInt();
+		long pairs=0;
+		ArrayList<Long> ll=new ArrayList<>();
+		for(double i=1,j=2;i<=N;i++){
+			if((Math.pow(i, A)+Math.pow(j, B))%K){
+				
+			}
+		}
+
+	}
+
+}

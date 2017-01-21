@@ -1,0 +1,11 @@
+
+public class ProblemA {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int days[]={31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+		String daysName[]={"monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday" };
+
+	}
+
+}

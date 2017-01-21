@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;MeanNumber&apos; to &apos;HighestFrequncy&apos;&#x0D;&#x0A;- Original project: &apos;OOPAssignment&apos;&#x0D;&#x0A;- Original element: &apos;MeanNumber&apos;&#x0D;&#x0A;- Renamed element: &apos;HighestFrequncy&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;MeanNumber&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{MeanNumber.java[MeanNumber" matchStrategy="1" name="HighestFrequncy" qualified="false" references="true" similarDeclarations="false" stamp="1464860642647" textual="false" version="1.0"/>
+</session>

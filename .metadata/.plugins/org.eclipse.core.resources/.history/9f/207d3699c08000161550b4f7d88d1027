@@ -1,0 +1,33 @@
+import java.util.Arrays;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.TreeMap;
+
+public class ProblemD {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int T=sc.nextInt();
+		
+		for(int t=0;t<T;t++ ){
+			int l=sc.nextInt();
+			int r=sc.nextInt();
+			int rl=r+l;
+			int merge[]=new int[rl];
+			for(int i=0;i<l;i++){
+				merge[i]=sc.nextInt();
+			}
+			for(int i=l-1;i<rl;i++){
+				merge[i]=sc.nextInt();
+			}
+			Arrays.sort(merge);
+			long waiting=0;
+			for(int i=0;i<rl-1;i++){
+				waiting+=merge[i];
+			}
+			System.out.println("Case "+(t+1)+": "+waiting);
+		}
+
+}
+}

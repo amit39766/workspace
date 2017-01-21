@@ -1,0 +1,15 @@
+import java.util.Arrays;
+
+public class HighestFrequncy {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int array[]={22,36,25,11,22,33,66,55,44,11,2,3,96,47,36,58,64,36,15,66,78,2,1,9,3,4};
+		Arrays.sort(array);
+		for(int a:array)
+		System.out.println(a);
+		
+
+	}
+
+}

@@ -1,0 +1,16 @@
+
+public class FibonacciSum {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		for(int i=0;i<=15;i++)System.out.println(fibonacci(i));
+
+	}
+	//Fibonacci number using golden ratio
+	static long fibonacci(int ith){
+		double number=(Math.pow(1.618034, ith)-Math.pow((1-1.618034), ith))/Math.sqrt(5);
+		long num=(long)number;
+		return num;
+	}
+
+}

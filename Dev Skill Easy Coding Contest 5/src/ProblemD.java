@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class ProblemD {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+				Scanner sc=new Scanner(System.in);
+				int T=sc.nextInt();
+				for(int t=1;t<=T;t++){
+					int r=sc.nextInt();
+					int c=sc.nextInt();
+					sc.nextLine();
+					char[][] mat=new char[r][c];
+					for(int i=0;i<r;i++){
+						mat[i]=sc.nextLine().toCharArray();
+					}
+					System.out.println("Case "+t+":");
+					boolean flag=false;
+					for(int k=0;k<r;k++){
+						for(int d=0;d<c;d++){
+							if(mat[k][d]=='$'){
+								System.out.println((k+1)+","+(d+1));
+								flag=true;
+							}
+						}
+						
+					
+				}
+					if(!flag)System.out.println("No Gold Found");
+
+			}
+
+		}
+
+
+	}
+
+

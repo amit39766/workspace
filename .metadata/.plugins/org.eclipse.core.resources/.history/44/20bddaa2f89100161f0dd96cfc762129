@@ -1,0 +1,28 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class ProblemB {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//BufferedReader sc=new BufferedReader(new InputStreamReader(System.in));
+		//Scanner sc=new Scanner(System.in);
+		FastScanner sc=new FastScanner();
+		int T=sc.nextInt();
+		for(int t=1;t<=T;t++){
+			int N=sc.nextInt();
+			int fary[]=new int[N-1];
+			int max=0;
+			int pass=0;
+			for(int i=1;i<N;i++){
+				pass+=sc.nextInt();
+				pass-=sc.nextInt();
+				if(max<pass)max=pass;
+			}
+			System.out.println(max);
+		}
+
+	}
+
+}
+

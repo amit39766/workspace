@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class MultiPlicationInterval {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int T=sc.nextInt();
+		for(int t=1;t<=T;t++ ){
+			sc.nextLine();
+			int n=sc.nextInt();
+			int Q=sc.nextInt();
+			sc.nextLine();
+			int ele[]=new int[n+1];
+			for(int k=1;k<=n;k++){
+				ele[k]=sc.nextInt();
+			}
+			System.out.println("Case "+t+":");
+			for(int q=0;q<Q;q++ ){
+				int i=sc.nextInt();
+				int j=sc.nextInt();
+				int min=ele[i];
+				int mi = 0,mj=0;
+				for(int w=i;w<=j;w++){
+					if(min>ele[w]){
+						min=ele[w];
+						mi=w;
+						mj=w;
+					}
+				}
+				System.out.println(min+" "+mi+" "+mj);
+				
+			}
+			
+			long mul[][]=new long[n+1][n+1];
+			for(int a=1;a<=n;a++){
+				long mulValue=1;
+				for(int b=a;b<=n;b++){
+					
+				}
+			}
+		}
+
+	}
+
+}

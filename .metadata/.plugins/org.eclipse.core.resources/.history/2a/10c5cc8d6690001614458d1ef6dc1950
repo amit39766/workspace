@@ -1,0 +1,20 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class ScannerInput {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		long startTime=System.nanoTime();
+		Scanner sc=new Scanner(System.in);
+		ArrayList<Integer> numberList=new ArrayList<>();
+		while(i++<10000){
+			String[] str=sc.nextLine().split(" ");
+			numberList.add(Integer.parseInt(str[1]));
+		}
+		long endTime=System.nanoTime();
+		System.out.println("Run Time : ".format("%.10f %s",(endTime-startTime)/10e9,"sec"));
+
+	}
+
+}

@@ -1,0 +1,42 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class LazySorting {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int N=sc.nextInt();
+		Map<Integer,Integer> mp=new HashMap<Integer,Integer>();
+		for(int i=0;i<N;i++){
+			int p=sc.nextInt();
+			if(mp.containsKey(p)){
+				int val=mp.get(p)+1;
+				mp.put(p, val);
+			}
+			else
+				mp.put(p, 1);
+		}
+		long perOfN=permutate(N);
+		long matchPer=1;
+		for (Map.Entry<Integer, Integer> entry : mp.entrySet())
+		{
+		    matchPer*=permutate(entry.getValue());
+		}
+		double miniute=0;
+		long exactPer=perOfN/matchPer;
+		for(long n=0;n<exactPer;n++){
+			miniute+=(1/(exactPer-n));
+		}
+		System.out.format("%d6%n", miniute);
+
+	}
+	public static long permutate(int n){
+		if(n==1)
+			return 1;
+		else
+			return n*permutate(n-1);
+	}
+
+}

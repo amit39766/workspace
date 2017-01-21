@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+public class GridLand {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int P=sc.nextInt();
+		int N=sc.nextInt();
+		char [][] grid={sc.nextLine().toCharArray(),sc.nextLine().toCharArray()};
+		System.out.println(grid[0][0]+" "+grid[0][1]);
+
+	}
+
+}

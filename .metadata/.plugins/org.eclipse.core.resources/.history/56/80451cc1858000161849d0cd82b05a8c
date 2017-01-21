@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Cryptography {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int prime[]=new int[15000];
+		prime[1]=2;
+		int limit=(int) Math.sqrt(15000)+2;
+		for(int i=3,j=2;i<=15000;i++,j++){
+			prime[j++]=i;
+			if(i<=limit){
+				for(int k=i*i;k<=n;k+=i*2){
+				}
+			}
+		}
+
+	}
+
+}

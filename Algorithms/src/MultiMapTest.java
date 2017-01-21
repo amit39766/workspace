@@ -1,0 +1,23 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class MultiMapTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Map<HashMap<Integer,Integer>,Integer> edgeWeight=new HashMap< HashMap<Integer,Integer>, Integer>();
+		Scanner sc=new Scanner(System.in);
+		for(int a=0;a<10;a++){
+			HashMap<Integer, Integer> arg0 =new HashMap<>();
+			arg0.put(sc.nextInt(), sc.nextInt());
+			edgeWeight.put(arg0, sc.nextInt());
+		}
+		System.out.println(edgeWeight);
+		HashMap<Integer, Integer> key=new HashMap<>();
+		key.put(2, 11);
+		System.out.println(edgeWeight.get(key));
+
+	}
+
+}

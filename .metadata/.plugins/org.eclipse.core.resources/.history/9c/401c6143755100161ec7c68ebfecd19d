@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class ShortPlaindrome {
+	private static long M = 1000000007;
+	private static long num = 0;
+	private static String st;
+
+	private static void allCombination(int arr[], int data[], int start, int end, int index, int r) {
+		if (index == r) {
+			if (st.charAt(0) == st.charAt(3) && st.charAt(1) == st.charAt(2))
+				num = (num + 1) % M;
+			return;
+		}
+
+		for (int i = start; i <= end && end - i + 1 >= r - index; i++) {
+			data[index] = arr[i];
+			allCombination(arr, data, i + 1, end, index + 1, r);
+		}
+	}
+
+	private static void Combinations(int arr[], int n, int r) {
+
+		int data[] = new int[r];
+
+		allCombination(arr, data, 0, n - 1, 0, r);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		st = sc.nextLine();
+		int stSize = st.length();
+		int arr[] = new int[stSize];
+		for (int i = 0; i < stSize; i++)
+			arr[i] = i;
+		int r = 4;
+
+		Combinations(arr, stSize, r);
+
+	}
+
+}

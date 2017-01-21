@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;FastInput.java&apos; to &apos;FastScanner.java&apos;&#x0D;&#x0A;- Original project: &apos;Ada Lovelace Day Girls&apos; Programming Contest&apos;&#x0D;&#x0A;- Original element: &apos;FastInput.java&apos;&#x0D;&#x0A;- Renamed element: &apos;FastScanner.java&apos;" description="Rename compilation unit &apos;FastInput.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;{FastInput.java" name="FastScanner.java" references="false" stamp="1476264280134" version="1.0"/>
+</session>

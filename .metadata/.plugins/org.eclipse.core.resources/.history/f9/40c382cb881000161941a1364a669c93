@@ -1,0 +1,36 @@
+package takeOff;
+
+import java.util.Scanner;
+
+public class uva488 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		for(int c=0;c<n;c++){
+			System.out.println();
+			int amp=sc.nextInt();
+			int fre=sc.nextInt();
+			String output="";
+			for(int i=1;i<amp;i++){
+				for(int j=0;j<i;j++)output+=i;
+				output+='\n';
+			}
+			String last="";
+			for(int i=amp-1;i>=1;i--){
+				for(int j=0;j<i;j++)last+=i;
+				if(i>1)
+				last+='\n';
+			}
+			String middle="";
+				for(int j=amp;j>0;j--)middle+=amp;
+			while(fre-->0){
+				System.out.println(output+middle+'\n'+last);
+			}
+			
+		}
+
+	}
+
+}

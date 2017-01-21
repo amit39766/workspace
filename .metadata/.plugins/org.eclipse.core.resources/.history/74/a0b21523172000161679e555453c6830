@@ -1,0 +1,57 @@
+package amit.diu;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Set;
+
+public class Search {
+	public static int sum=0;
+    private static String START;
+    private static  String END ;
+    
+	private static ArrayList<String> arrayList=new ArrayList<>();
+    public ArrayList<String> CallMe(String st,String end,Graph graph){
+    	START=st;
+    	END=end;
+        LinkedList<String> visited = new LinkedList();
+        visited.add(START);
+        new Search().depthFirst(graph, visited);
+        return arrayList;
+    }
+
+	private void depthFirst(Graph graph, LinkedList<String> visited) {
+        LinkedList<String> nodes = graph.adjacentNodes(visited.getLast());
+        // examine adjacent nodes
+        for (String node : nodes) {
+            if (visited.contains(node)) {
+                continue;
+            }
+            if (node.equals(END)) {
+                visited.add(node);
+                printPath(visited);
+                visited.removeLast();
+                break;
+            }
+        }
+        for (String node : nodes) {
+            if (visited.contains(node) || node.equals(END)) {
+                continue;
+            }
+            visited.addLast(node);
+            depthFirst(graph, visited);
+            visited.removeLast();
+        }
+        
+    }
+    private void printPath(LinkedList<String> visited) {
+        for (String node : visited) {
+        	arrayList.add(node);
+            System.out.print(node);
+            System.out.print(" ");
+        }
+    }
+}

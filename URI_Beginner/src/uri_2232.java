@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class uri_2232 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int n = 31;
+        int[][] pascal  = new int[n+1][];
+        pascal[1] = new int[1+2];
+        pascal[1][1] = 1;
+        for (int i = 2; i <= n; i++) {
+            pascal[i] = new int[i+2];
+            for (int j = 1; j < pascal[i].length - 1; j++)
+                pascal[i][j] = pascal[i-1][j-1] + pascal[i-1][j];
+        }
+		int T=sc.nextInt();
+		for(int t=1;t<=T;t++){
+			int rN=sc.nextInt();
+			int sum=0;
+			for(int i=1;i<=rN;i++){
+				for(int j=1;j<pascal[i].length;j++){
+					sum+=pascal[i][j];
+				}
+			}
+			System.out.println(sum);
+		}
+
+	}
+
+}

@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class FactorialsAlas {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt(); String st=sc.nextLine();
+		int k=st.length();
+		if(n%k!=0){
+			System.out.println(n*(n-k)*(n-2*k)*(n%k));
+		}else{
+			System.out.println(n*(n-k)*(n-2*k)*(k));
+			
+		}
+
+	}
+
+}

@@ -1,0 +1,40 @@
+package uvaOnlineJudge;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Scanner;
+
+public class stirngFrequncey {
+
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        Scanner sc=new Scanner(System.in);
+        ArrayList<String> strList=new ArrayList<>();
+        Map<String, Integer> map=new HashMap<String,Integer>();
+        int n=Integer.parseInt(sc.nextLine());
+        for(int i=0;i<n;i++){
+            String str=sc.next();
+            sc.nextLine();
+            Integer m=map.get(str);
+            m=(m==null)?1:++m;
+            map.put(str, m);
+            
+        }
+        Iterator<Map.Entry<String, Integer>> i=map.entrySet().iterator();
+        while(i.hasNext()){
+            String key=i.next().getKey();
+            String string=key+" "+map.get(key);
+            strList.add(string);
+            
+        }
+        strList.sort(null);
+        Iterator<String> str=strList.iterator();
+        while(str.hasNext()){
+            System.out.println(str.next());
+        }
+
+    }
+
+}

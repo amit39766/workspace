@@ -1,0 +1,116 @@
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Set;
+class Graph {
+    private Map<Integer, LinkedHashSet<Integer>> map = new HashMap();
+
+    public void addEdge(int node1, int node2) {
+        LinkedHashSet<Integer> adjacent = map.get(node1);
+        if(adjacent==null) {
+            adjacent = new LinkedHashSet();
+            map.put(node1, adjacent);
+        }
+        adjacent.add(node2);
+    }
+
+    public void addTwoWayVertex(int node1, int node2) {
+        addEdge(node1, node2);
+        addEdge(node2, node1);
+    }
+
+    public boolean isConnected(int node1, int node2) {
+        Set adjacent = map.get(node1);
+        if(adjacent==null) {
+            return false;
+        }
+        return adjacent.contains(node2);
+    }
+
+    public LinkedList<Integer> adjacentNodes(int last) {
+        LinkedHashSet<Integer> adjacent = map.get(last);
+        if(adjacent==null) {
+            return new LinkedList();
+        }
+        return new LinkedList<Integer>(adjacent);
+    }
+}
+
+
+ public class FishMonger {
+ //    private static final String START = "B";
+//    private static final String END = "E";
+	private static int N;
+	private static int start;
+	private static int end;
+	static Map<Integer,Integer> cmap=new HashMap<Integer,Integer>();
+    public static void main(String[] args) {
+        // this graph is directional
+//    	
+         Graph graph = new Graph();
+
+        Scanner in=new Scanner(System.in);
+        N=in.nextInt();
+        for(int c=1;c<=N;c++){
+        	cmap.put(c,in.nextInt());
+        }
+        for(int n=1;n<N;n++){
+        	int node1=in.nextInt();
+        	int node2=in.nextInt();
+        	graph.addEdge(node1, node2);
+        }
+        	LinkedList<Integer> visited = new LinkedList();
+        		visited.add(start);
+        		(new FishMonger().depthFirst(graph,visited));
+        	}
+        	System.out.println(sum);
+        }
+        
+        
+    }
+
+    private void depthFirst(Graph graph,LinkedList<Integer> visited) {
+        LinkedList<Integer> nodes = graph.adjacentNodes(visited.getLast());
+        // examine adjacent nodes
+        int Dij=0;
+        for (Integer node : nodes) {
+            if (visited.contains(node)) {
+                continue;
+            }
+            
+            	if (node.equals(end)) {
+                    visited.add(node);
+                    Dij+=printPath(visited);
+                    visited.removeLast();
+                    break;
+                }
+            
+            
+       }
+        for (Integer node : nodes) {
+            if (visited.contains(node) || node.equals(end)) {
+                continue;
+            }
+            visited.addLast(node);
+            depthFirst(graph, visited);
+            visited.removeLast();
+        }
+        
+    }
+
+    private int printPath(LinkedList<Integer> visited) {
+    	Set<Integer> intSet=new HashSet<Integer>();
+        for (Integer node : visited) {
+        	intSet.add(cmap.get(node));
+        	//cmap.get(node);
+            System.out.print(node);
+            System.out.print(" ");
+        	
+        }
+        System.out.println("Size: "+(intSet.size()));
+        return intSet.size();
+    }
+}

@@ -1,0 +1,34 @@
+package amit.diu.string;
+
+import java.util.Scanner;
+
+public class AnagramsString {
+
+static boolean isAnagram(String a, String b) {
+	boolean flag=false;
+	for(int i=0;i<a.length();i++){
+		char ch=a.charAt(i);
+		char anch=(Character.isLowerCase(ch))?Character.toUpperCase(ch):Character.toLowerCase(ch);
+		if(b.contains(Character.toString(ch))||b.contains(Character.toString(anch))){
+			flag=true;
+		}
+		else{
+			flag=false;
+			break;
+		}
+	}
+	return flag;
+        
+    }
+  
+    public static void main(String[] args) {
+    
+        Scanner scan = new Scanner(System.in);
+        String a = scan.next();
+        String b = scan.next();
+        scan.close();
+        boolean ret = isAnagram(a, b);
+        System.out.println( (ret) ? "Anagrams" : "Not Anagrams" );
+    }
+
+}

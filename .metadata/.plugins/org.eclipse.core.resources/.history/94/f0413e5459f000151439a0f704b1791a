@@ -1,0 +1,34 @@
+package takeOff;
+
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class Frequency {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		HashMap<Character,Integer> map = new HashMap<Character,Integer>(); 
+		while(n-->=0){
+			String s=sc.nextLine();
+			s=s.toUpperCase();
+			         
+			for(int i = 0; i < s.length(); i++){
+			   char c = s.charAt(i);
+			   Integer val = map.get(new Character(c));
+			   if(val != null){
+			     map.put(c, new Integer(val + 1));
+			   }else{
+			     map.put(c,1);
+			   }
+			}
+			
+		}
+		System.out.println(map);
+		
+		
+
+	}
+
+}

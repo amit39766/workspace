@@ -1,0 +1,23 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class TwoCharacters {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		sc.nextLine();
+		String st=sc.nextLine();
+		for(int i=1;i<st.length();i++){
+			if(st.charAt(i-1)==st.charAt(i)){
+				st=st.replace(st.charAt(i), ' ').trim();
+				i=0;
+			}
+		}
+		System.out.println(st);
+		
+
+	}
+
+}

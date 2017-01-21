@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class uri_1099 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		for(int i=0;i<n;i++){
+			int x=sc.nextInt();
+			int y=sc.nextInt();
+			int sumOfOdds=0;
+			if(x>y){
+				for(int j=y+1;j<x;j++){
+					if(j%2!=0)sumOfOdds+=j;
+				}
+			}else{
+				for(int j=x+1;j<y;j++){
+					if(j%2!=0)sumOfOdds+=j;
+				}
+			}
+			System.out.println(sumOfOdds);
+		}
+
+	}
+
+}

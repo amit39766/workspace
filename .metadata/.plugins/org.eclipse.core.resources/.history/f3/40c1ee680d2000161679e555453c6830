@@ -1,0 +1,73 @@
+package amit.diu;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Set;
+
+public class Search {
+	public int sum=0;
+    private static String START;
+    private static  String END ;
+    Map<String,Integer> cmap=new HashMap<String,Integer>();
+    public void CallMe(String st,String end,int NofNode){
+    	START=st;
+    	END=end;
+    	
+    
+        // this graph is directional
+        Graph graph = new Graph();
+        Scanner in=new Scanner(System.in);
+        int N=NofNode;
+        for(int c=1;c<=N;c++){
+        	cmap.put(String.valueOf(c),in.nextInt());
+        }
+        for(int n=1;n<N;n++){
+        	String node1=String.valueOf(in.nextInt());
+        	String node2=String.valueOf(in.nextInt());
+        	graph.addEdge(node1, node2);
+        }
+        LinkedList<String> visited = new LinkedList();
+        visited.add(START);
+        new Search().depthFirst(graph, visited);
+        
+    }
+
+	private void depthFirst(Graph graph, LinkedList<String> visited) {
+        LinkedList<String> nodes = graph.adjacentNodes(visited.getLast());
+        // examine adjacent nodes
+        for (String node : nodes) {
+            if (visited.contains(node)) {
+                continue;
+            }
+            if (node.equals(END)) {
+                visited.add(node);
+                printPath(visited);
+                visited.removeLast();
+                break;
+            }
+        }
+        for (String node : nodes) {
+            if (visited.contains(node) || node.equals(END)) {
+                continue;
+            }
+            visited.addLast(node);
+            depthFirst(graph, visited);
+            visited.removeLast();
+        }
+        
+    }
+    private void printPath(LinkedList<String> visited) {
+    	Set<Integer>sett=new HashSet<Integer>();
+        for (String node : visited) {
+        	sett.add(cmap.get(node));
+            System.out.print(node);
+            System.out.print(" ");
+        }
+        
+            sum+=sett.size();
+    }
+}

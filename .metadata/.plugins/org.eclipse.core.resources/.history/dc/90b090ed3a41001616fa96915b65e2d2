@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class NearlySquare {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int T=sc.nextInt();
+		for(int t=1;t<=T;t++){
+			int m=sc.nextInt();
+			int k=0;
+			double sq=Math.sqrt(m);
+			int n=(int)sq;
+			if(n*n>=m){
+				k=m-n*n;
+			}else{
+				k=m-n*n;
+			}
+			System.out.println("Case "+t+": "+n+" "+k);
+		}
+
+	}
+
+}

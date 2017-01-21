@@ -1,0 +1,14 @@
+import java.util.Scanner;
+
+public class uri_1011 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		double r=sc.nextDouble();
+		double res=(4d/3d)*3.14159*r*r*r;
+		System.out.printf("VOLUME = %.3f%n",res);
+
+	}
+
+}

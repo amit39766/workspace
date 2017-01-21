@@ -1,0 +1,94 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.StringTokenizer;
+
+public class KickTheFootball {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		FastScanner sc=new FastScanner();
+		int T=sc.nextInt();
+		for(int t=1;t<=T;t++){
+			double v0=sc.nextDouble();
+			double ang=Math.toRadians(sc.nextDouble());
+			
+			int n=sc.nextInt();
+			int xi[]=new int[n];
+			int yi[]=new int[n];
+			int yii[]=new int[n];
+			String names[]=new String[n];
+			boolean flag=false;
+			double vx=v0*Math.cos(ang);
+			double vy=v0*Math.sin(ang);
+			String playerName="";
+			for(int i=0;i<n;i++){
+					xi[i]=sc.nextInt();
+					yi[i]=sc.nextInt();
+					yii[i]=sc.nextInt();
+					names[i]=sc.nextToken();
+			}
+			for(int i=0;i<n;i++){
+				
+				int x=xi[i];
+				int y1=yi[i];
+				int y2=yii[i];
+				double sec=x/vx;
+				double y=sec*(vy-(0.5*9.8*sec));
+				if(y>=y1&&y<=y2){
+					flag=true;
+					playerName=names[i];
+					break;
+					
+				}
+			}
+			System.out.println((flag)?"Case "+t+": Ball is received by "+playerName:"Case "+t+": No one received the ball");
+		}
+
+	}
+
+}
+
+class FastScanner {
+	BufferedReader br;
+	StringTokenizer st;
+
+	public FastScanner(String s) {
+		try {
+			br = new BufferedReader(new FileReader(s));
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public FastScanner() {
+		br = new BufferedReader(new InputStreamReader(System.in));
+	}
+
+	String nextToken() {
+		while (st == null || !st.hasMoreElements()) {
+			try {
+				st = new StringTokenizer(br.readLine());
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return st.nextToken();
+	}
+
+	int nextInt() {
+		return Integer.parseInt(nextToken());
+	}
+
+	long nextLong() {
+		return Long.parseLong(nextToken());
+	}
+
+	double nextDouble() {
+		return Double.parseDouble(nextToken());
+	}
+}

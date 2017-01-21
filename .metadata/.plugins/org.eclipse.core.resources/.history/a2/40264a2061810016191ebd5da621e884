@@ -1,0 +1,29 @@
+import java.math.BigInteger;
+import java.util.Scanner;
+
+public class BigSum {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		while(sc.hasNextLine()){
+			String numbers[]=sc.nextLine().split(",");
+			StringBuffer num1=new StringBuffer(numbers[0]);
+			StringBuffer num2=new StringBuffer(numbers[1]);
+			String rnum1=num1.reverse().toString().trim();
+			String rnum2=num2.reverse().toString().trim();
+			String leadingZero="";
+			for(int i=0;i<rnum1.length();i++){
+				if(rnum1.charAt(i)=='0')leadingZero+="0";
+			}
+			BigInteger bn1=new BigInteger(rnum1);
+			BigInteger bn2=new BigInteger(rnum2);
+			BigInteger sum=bn1.add(bn2);
+			StringBuffer result=new StringBuffer(sum.toString());
+			BigInteger reResult=new BigInteger(result.reverse().toString().trim());
+			System.out.println(reResult);
+		}
+
+	}
+
+}

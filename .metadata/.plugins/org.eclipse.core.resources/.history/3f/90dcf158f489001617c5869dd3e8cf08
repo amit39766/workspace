@@ -1,0 +1,41 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class GetTheNumbers {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int T=sc.nextInt();
+		for(int t=1;t<=T;t++){
+			int n=sc.nextInt();
+			ArrayList<String> mobile=new ArrayList<>;
+			for(int a=0;a<n;a++){
+				mobile.add(sc.nextLine());
+			}
+			String num[]=new String[n];
+			String status[]=new String[n];
+			for(int a=0;a<n;a++){
+				String str[]=sc.nextLine().split(",");
+				num[a]=str[0];
+				status[a]=str[1];
+			}
+			for(int j=0;j<n;j++){
+				if(status[j].equals("Success")){
+					
+				}
+			}
+		}
+
+	}
+
+}
+/*
+Case: 1
+Success list
+016****1616 : 01616161616
+018****1818 : 01818181818
+011****1111 : 01111111111
+Failed list
+017****1717 : 01717171717
+019****1919 : 01919191919*/

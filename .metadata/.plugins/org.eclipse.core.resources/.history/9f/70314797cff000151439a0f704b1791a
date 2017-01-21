@@ -1,0 +1,71 @@
+package takeOff;
+
+import java.util.*;
+class CharSeq{
+	   private int frequecy;
+	   private char ch;
+	   public CharSeq(int value, char ch) {
+	      super();
+	      this.frequecy =value;
+	      this.ch=ch;
+
+	   }
+	   public int getFrequncy() {
+	      return frequecy;
+	   }
+	   public char getChar() {
+	      return ch;
+	   }
+	}
+
+public class Frequency {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		//sortItem cmp=new sortItem();
+		HashMap<Character,Integer> map = new HashMap<Character,Integer>();
+		PriorityQueue<CharSeq> cs=new PriorityQueue<>(10, new Comparator<CharSeq>() {
+			@Override
+			public int compare(CharSeq o1, CharSeq o2) {
+				// TODO Auto-generated method stub
+				if(o1.getFrequncy()<o2.getFrequncy())
+					return 1;
+				else if(o1.getFrequncy()==o2.getFrequncy()){
+					int kv1=o1.getChar();
+					int kv2=o2.getChar();
+					return (kv1<kv2)?1:-1;
+				}
+				else
+					return -1;
+				
+			}
+		});
+		while(n-->=0){
+			String s=sc.nextLine();
+			s=s.toUpperCase();
+			         
+			for(int i = 0; i < s.length(); i++){
+			   char c = s.charAt(i);
+			   Integer val = map.get(new Character(c));
+			   if(val != null){
+			     map.put(c, new Integer(val + 1));
+			   }else{
+			     map.put(c,1);
+			   }
+			}
+			
+		}
+		sc.close();
+		for(int i=65;i<91;i++){
+			char ch=(char)i;
+			if(map.get(ch) != null){
+				System.out.println(ch+" "+map.get(ch));
+			}
+		}
+				
+	}
+
+}
+ 

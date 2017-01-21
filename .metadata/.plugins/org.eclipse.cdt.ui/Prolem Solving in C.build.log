@@ -1,0 +1,9 @@
+23:45:26 **** Incremental Build of configuration Build (GNU) for project Prolem Solving in C ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Program Files/Java/jre1.8.0_111/bin/client;C:/Program Files/Java/jre1.8.0_111/bin;C:/Program Files/Java/jre1.8.0_111/lib/i386;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\NVIDIA Corporation\PhysX\Common;C:\Program Files\Skype\Phone\;C:\Program Files\Java\jdk1.8.0_102\bin;C:\Program Files\Java\jre1.8.0_101\bin;C:\Program Files\MySQL\MySQL Utilities 1.4.3\;C:\Program Files\MySQL\MySQL Utilities 1.4.3\Doctrine extensions for PHP\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\TDM-GCC-32\bin;C:\Program Files\nodejs\;C:\WINDOWS\system32\config\systemprofile\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Windows Kits\8.1\Windows Performance Toolkit\;G:\Programs Files\Git\cmd;C:\Users\Amit Chandra Sarkar\AppData\Local\Microsoft\WindowsApps;C:\Users\Amit Chandra Sarkar\AppData\Roaming\npm;G:\Eclipse;]
+
+23:45:26 Build Finished (took 623ms)
+

@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class uri_1021 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int num=sc.nextInt();
+		System.out.println(num);
+		double note[]={100,50,20,10,5,2};
+		double coin[]={1,0.50,0.25,0.10,0.05,0.01};
+		for(int i=0;i<7;i++){
+			int counter=0;
+			counter=num/note[i];
+			num=num-note[i]*counter;
+			System.out.printf("%d nota(s) de R$ %d,00%n",counter,note[i]);
+		}
+
+	}
+
+}

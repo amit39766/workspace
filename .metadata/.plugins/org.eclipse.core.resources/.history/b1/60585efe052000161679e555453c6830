@@ -1,0 +1,15 @@
+package amit.diu;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//		String st=String.valueOf()
+		String st="1";
+		String end="5";
+		int node=5;
+		Search sch=new Search(st, end, node);
+
+	}
+
+}

@@ -1,0 +1,29 @@
+package takeOff;
+import java.util.Scanner;
+class NumberReversing
+{
+   public static void main(String args[])
+   {
+      
+      int a,b,sum;
+      String revnum = "";
+      System.out.println("Enter the value of a and b ");
+     
+      Scanner in = new Scanner(System.in);
+      System.out.print("a: ");
+      a = in.nextInt();
+      System.out.print("b: ");
+      b = in.nextInt();
+      sum=a+b;
+      System.out.println("a+b= "+sum);
+      
+      while( sum != 0 )
+      {
+
+          revnum+=sum%10;
+          sum = sum/10;
+      }
+
+      System.out.println("Reverse of sum of a and b is: "+revnum);
+   }
+}

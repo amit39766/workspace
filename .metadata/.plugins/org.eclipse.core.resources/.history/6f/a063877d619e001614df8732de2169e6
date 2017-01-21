@@ -1,0 +1,81 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class FibonacciSum {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		cFastScanner sc=new cFastScanner();
+		int Q=sc.nextInt();
+		for(int q=1;q<=Q;q++){
+			int n=sc.nextInt();
+			int ai[]=new int[n+1];
+			int sumOfai[]=new int[n+1];
+			for(int i=1;i<=n;i++){
+				ai[i]=sc.nextInt();
+				sumOfai[i]=ai[i]+sumOfai[i-1];
+			}
+			long sum=0l;
+			for(int i=1;i<=n;i++){
+				for(int j=1;j<=n;j++){
+					sum=(sum+fibonacci(sumOfai[j]-sumOfai[i-1]))%1000000007;
+				}
+			}
+			System.out.println(sum);
+		}
+		//for(int i=0;i<=15;i++)System.out.println(fibonacci(i));
+
+	}
+	//Fibonacci number using golden ratio
+	static long fibonacci(int ith){
+		double number=(Math.pow(1.618034, ith)-Math.pow((1-1.618034), ith))/Math.sqrt(5);
+		long num=(long)number;
+		return num;
+	}
+
+}
+class cFastScanner {
+	BufferedReader br;
+	StringTokenizer st;
+
+	public cFastScanner(String s) {
+		try {
+			br = new BufferedReader(new FileReader(s));
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public cFastScanner() {
+		br = new BufferedReader(new InputStreamReader(System.in));
+	}
+
+	String nextToken() {
+		while (st == null || !st.hasMoreElements()) {
+			try {
+				st = new StringTokenizer(br.readLine());
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return st.nextToken();
+	}
+
+	int nextInt() {
+		return Integer.parseInt(nextToken());
+	}
+
+	long nextLong() {
+		return Long.parseLong(nextToken());
+	}
+
+	double nextDouble() {
+		return Double.parseDouble(nextToken());
+	}
+}

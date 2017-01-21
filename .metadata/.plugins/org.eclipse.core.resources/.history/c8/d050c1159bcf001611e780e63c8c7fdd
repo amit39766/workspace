@@ -1,0 +1,26 @@
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
+public class PrimitiveProblem {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+			Scanner sc=new Scanner(System.in);
+			int p=sc.nextInt();
+			Set<Integer> num=new HashSet<Integer>();
+			for(int i=1;i<p;i++){
+				for(int j=1;j<p-1;j++){
+					
+				}
+			}
+
+	}
+	public static int power(int x,int y){
+		int power=0;
+		power=(int)Math.pow(x, y);
+		return power;
+		
+	}
+
+}

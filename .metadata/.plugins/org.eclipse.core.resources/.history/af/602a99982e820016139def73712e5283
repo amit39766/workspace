@@ -1,0 +1,75 @@
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Scanner;
+
+public class SixN_Cryption {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int dummy=1;
+		while(sc.hasNext()){
+			if(dummy>1){
+				sc.nextLine();
+				dummy++;
+			}
+			int en=sc.nextInt();
+			int n=sc.nextInt();
+			long num[]=new long[n];
+			for(int k=0;k<n;k++){
+				num[k]=sc.nextLong();
+				sc.nextLine();
+			}
+			//Arrays.sort(num);
+			//LinkedList<Long> plist=primeFactors(num[0]);
+			long bigPrime=primeFactors(num[0]);
+/*			boolean flag=false;
+			for(int p=plist.size()-1;p>=0;p--){
+				for(int j=1;j<num.length;j++){
+					if(num[j]%plist.get(p)!=0){
+						flag=false;
+						break;
+					}else{
+						flag=true;
+					}
+				}
+				if(flag){
+					bigPrime=plist.get(p);
+					break;
+				}
+			}*/
+			long sum=0;
+			for(int i=0;i<n;i++){
+				sum+=num[i]/bigPrime;
+			}
+			System.out.println("Output: "+(en-sum));
+			
+			
+		}
+
+	}
+	private static long primeFactors(long num){
+	
+		LinkedList<Long> ll=new LinkedList<>();
+	    while (num%2 == 0)
+	    {
+	        ll.add((long) 2);
+	        num = num/2;
+	    }
+	 
+	    for (long i =(long) Math.sqrt(num);  i >= 3; i = i-2)
+	    {
+	      
+	        while (num%i == 0)
+	        {
+	            ll.add(i);
+	            num = num/i;
+	        }
+	    }
+	    if (num > 2)
+	        ll.add(num);
+		return ll.getLast();
+	}
+
+
+}

@@ -1,0 +1,33 @@
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Scanner;
+
+public class Problem2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int T=sc.nextInt();
+		double A=sc.nextDouble();
+		double B=sc.nextDouble();
+		long N=sc.nextLong();
+		int K=sc.nextInt();
+		BigInteger pairs=BigInteger.ZERO;
+		for(long i=1;i<N;i++){
+			for(long j=i+1;j<=N;j++){
+				if((Math.pow(i, A)+Math.pow(j, B))%K==0){
+					pairs.add(BigInteger.TEN);
+				}
+				if((Math.pow(j, A)+Math.pow(i, B))%K==0){
+					pairs.add(BigInteger.ONE);
+				}
+			}
+			
+		}
+		BigInteger mod =new BigInteger("1000000007");
+		System.out.println(pairs.mod(mod));
+
+	}
+
+}

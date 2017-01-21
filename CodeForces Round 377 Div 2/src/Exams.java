@@ -1,0 +1,81 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Exams {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		dFastScanner sc= new dFastScanner();
+		int n=sc.nextInt();
+		int m=sc.nextInt();
+		int days[]=new int[n];
+		int times[]=new int[m];
+		for(int i=0;i<n;i++)examDays[i]=sc.nextInt();
+		for(int i=0;i<m;i++) subs[i]=sc.nextInt();
+		int pre=0;
+		int passed=0;
+		int mindays=0;
+		for(int i=0,j=0;i<n;i++){
+			if(days[i]==0){
+				pre++;
+			}else if(pre>=subs[days[i]-1]&&subs[days[i]-1]!=0){
+				passed++;
+				mindays=mindays+1;
+				times[days[i]-1]=0;
+				
+			}
+			if(passed>=m)break;
+
+		}
+		System.out.println(pre+mindays);
+		                         
+
+	}
+
+}
+class dFastScanner {
+	BufferedReader br;
+	StringTokenizer st;
+
+	public dFastScanner(String s) {
+		try {
+			br = new BufferedReader(new FileReader(s));
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public dFastScanner() {
+		br = new BufferedReader(new InputStreamReader(System.in));
+	}
+
+	String nextToken() {
+		while (st == null || !st.hasMoreElements()) {
+			try {
+				st = new StringTokenizer(br.readLine());
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return st.nextToken();
+	}
+
+	int nextInt() {
+		return Integer.parseInt(nextToken());
+	}
+
+	long nextLong() {
+		return Long.parseLong(nextToken());
+	}
+
+	double nextDouble() {
+		return Double.parseDouble(nextToken());
+	}
+}
+

@@ -1,0 +1,34 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+
+public class ProblemD {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//BufferedReader sc=new BufferedReader(new InputStreamReader(System.in));
+		//Scanner sc=new Scanner(System.in);
+		dFastScanner sc=new dFastScanner();
+		int T=sc.nextInt();
+		for(int t=1;t<=T;t++){
+			int N=sc.nextInt();
+			ArrayList qubic=new ArrayList<>();
+			for(int i=0;i<N;i++){
+				qubic.add((long)Math.pow(sc.nextDouble(),3));
+			}
+			Collections.sort(qubic);
+			ArrayList<Long> al=new ArrayList<>();
+			al.addAll(qubic);
+			int qN=N;
+			for(int i=N-1;i>0;i--){
+				if(qubic[i]!=qubic[i-1])qN--;
+		}
+			System.out.println(qN);
+
+	}
+
+	}
+
+}

@@ -1,0 +1,18 @@
+import java.math.BigInteger;
+import java.util.Scanner;
+
+public class BigMod {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		String str[]=sc.nextLine().split("\\*\\*");
+		BigInteger m=new BigInteger("1000000007");
+		BigInteger num1=new BigInteger(str[0]);
+		BigInteger num2=new BigInteger(str[1]);
+		BigInteger re=num1.modPow(num2, m);
+		System.out.println(re);
+
+	}
+
+}

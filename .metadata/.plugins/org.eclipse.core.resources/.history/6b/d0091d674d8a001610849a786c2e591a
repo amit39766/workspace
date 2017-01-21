@@ -1,0 +1,86 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class GetTheNumbers {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int T=sc.nextInt();
+		for(int t=1;t<=T;t++){
+			int n=sc.nextInt();
+			sc.nextLine();
+			String mobile[]=new String[n];
+			for(int a=0;a<n;a++){
+				mobile[a]=sc.nextLine();
+			}
+			String num[]=new String[n];
+			String status[]=new String[n];
+			for(int a=0;a<n;a++){
+				String str[]=sc.nextLine().split(",");
+				num[a]=str[0];
+				status[a]=str[1];
+			}
+			System.out.println("Case: "+t);
+			System.out.println("Success list");
+			for(int j=0;j<n;j++){
+				if(status[j].equals("Success")){
+					String number="";
+					String parts[]=num[j].split("\\*\\*\\*\\*");
+					String regex=parts[0]+".+"+parts[1];
+					int counter=0;
+					for(int k=0;k<n;k++){
+						if(mobile[k].matches(regex)){
+							number=mobile[k];
+							counter++;
+							if(counter>1){
+								number="Confused";
+								break;
+							}
+							
+						}
+					}
+
+					System.out.println(num[j]+" : "+number);
+					
+				}
+			}
+			System.out.println("Failed list");
+			for(int j=0;j<n;j++){
+				if(status[j].equals("Failed")){
+					String number="";
+					String parts[]=num[j].split("\\*\\*\\*\\*");
+					String regex=parts[0]+".+"+parts[1];
+					int counter=0;
+					for(int k=0;k<n;k++){
+						if(mobile[k].matches(regex)){
+							number=mobile[k];
+							counter++;
+							if(counter>1){
+								number="Confused";
+								break;
+							}
+							
+						}
+					}
+					
+					System.out.println(num[j]+" : "+number);
+				
+				}
+			}
+			if(t<T)
+			sc.nextLine();
+		}
+
+	}
+
+}
+/*
+Case: 1
+Success list
+016****1616 : 01616161616
+018****1818 : 01818181818
+011****1111 : 01111111111
+Failed list
+017****1717 : 01717171717
+019****1919 : 01919191919*/

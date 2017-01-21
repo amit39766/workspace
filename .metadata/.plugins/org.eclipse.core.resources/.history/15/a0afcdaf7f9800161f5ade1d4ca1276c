@@ -1,0 +1,74 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class ProblemA {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		aFastScanner sc=new aFastScanner();
+		int T=sc.nextInt();
+		for(int t=1;t<=T;t++){
+			int N=sc.nextInt();
+			int ele[]=new int[N+1];
+			for(int n=1;n<=N;n++){
+				ele[n]=sc.nextInt();
+			}
+			int count=0;
+			for(int i=1;i<=N;i++){
+				for(int j=1;j<=N;j++){
+					for(int k=1;k<=N;k++){
+						if(!(i==j||j==k))
+							if(ele[i]+ele[j]-ele[k]==0)count++;
+					}
+				}
+			}
+		}
+
+	}
+
+}
+class aFastScanner {
+	BufferedReader br;
+	StringTokenizer st;
+
+	public aFastScanner(String s) {
+		try {
+			br = new BufferedReader(new FileReader(s));
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public aFastScanner() {
+		br = new BufferedReader(new InputStreamReader(System.in));
+	}
+
+	String nextToken() {
+		while (st == null || !st.hasMoreElements()) {
+			try {
+				st = new StringTokenizer(br.readLine());
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return st.nextToken();
+	}
+
+	int nextInt() {
+		return Integer.parseInt(nextToken());
+	}
+
+	long nextLong() {
+		return Long.parseLong(nextToken());
+	}
+
+	double nextDouble() {
+		return Double.parseDouble(nextToken());
+	}
+}

@@ -1,0 +1,33 @@
+package amit.diu.string;
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+import java.util.Stack;
+
+public class PlaindromString {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String str=(new Scanner(System.in)).nextLine();
+		Stack<Character> cst=new Stack<>();
+		Queue<Character> qst=new LinkedList<>();
+		for(int i=0;i<str.length();i++){
+			Character ch=str.charAt(i);
+			cst.push(ch);
+			qst.add(ch);
+			
+		}
+		boolean flag=true;
+		for(char c:cst){
+			if(cst.pop()==qst.poll()) flag=true;
+			else {
+				flag=false;
+				break;
+			}
+		}
+		System.out.println((flag?"Plaindrom":"Not a Plaindrom"));
+
+	}
+
+}

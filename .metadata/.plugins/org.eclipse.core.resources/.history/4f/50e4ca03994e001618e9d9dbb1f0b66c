@@ -1,0 +1,25 @@
+
+public class Students {
+	private String ID;
+	private String name;
+	private String deptName;
+	private String courseNo;
+	private double marksObtained;
+	
+	public Students(String iD, String name, String deptName, String courseNo, double marksObtained) {
+		ID = iD;
+		this.name = name;
+		this.deptName = deptName;
+		this.courseNo = courseNo;
+		this.marksObtained = marksObtained;
+	}
+	public void Input(String iD, String name, String deptName, String courseNo, double marksObtained) {
+		ID = iD;
+		this.name = name;
+		this.deptName = deptName;
+		this.courseNo = courseNo;
+		this.marksObtained = marksObtained;
+	}
+	
+	
+}

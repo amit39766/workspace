@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class AntiPrime {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int q=sc.nextInt();
+		for(int i=0;i<q;i++){
+			int a_i=sc.nextInt();
+			int max=0;
+			int antiprime=0;
+			int divisors=0;
+			for(int j=1;;j++){
+				for(int k=1;k<=j;k++){
+					if(j%k==0)divisors++;
+				}
+				if(j>a_i&&divisors>max){
+					antiprime=j;
+					break;
+				}
+				if(max<divisors) max=divisors;
+				divisors=0;
+				
+			}
+			System.out.println(antiprime);
+		}
+
+	}
+
+}

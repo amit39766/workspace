@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class TreasurerHunting {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int x,y,a,b;
+		x=sc.nextInt();
+		y=sc.nextInt();
+		sc.nextLine();
+		a=sc.nextInt();
+		b=sc.nextInt();
+		double m,im,k,n,x1,y1;
+		k=0;
+		n=0.d;
+		m=(double)b/a;
+		im=-(1/m);
+		double dom=im-m;
+		//intersecting point of two straghit line (x1,y1)
+		x1=(im*x-y)/dom;
+		y1=m*(im*x-y)/dom;
+		k=x1/a;
+		double ia=x1-x;
+		n=(x1-x)/ia;
+		System.out.printf("%.12f%n",k);
+		System.out.printf("%.12f%n",n);
+
+	}
+
+}

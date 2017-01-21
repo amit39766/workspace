@@ -1,0 +1,41 @@
+package takeOff;
+
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class uva492 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		while(sc.hasNextLine()){
+			String strLine=new String(sc.nextLine());
+			//StringBuilder str=strLine;
+			Pattern pt=Pattern.compile("[a-zA-Z]+");
+			Pattern apt=Pattern.compile("[^a-zA-Z]+");
+			Matcher amt=apt.matcher(strLine);
+			Matcher mt=pt.matcher(strLine);
+			while(mt.find()||amt.find()){
+				if(amt.find())System.out.print(amt.group());
+				else{
+				char ch=mt.group().charAt(0);
+				if(ch=='a'||ch=='u'||ch=='o'||ch=='e'||ch=='i'||ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U'){
+					System.out.print(mt.group()+"ay");					
+				}
+				else{
+					String str=mt.group();
+					String strBuild="";
+					for(int c=1;c<str.length();c++)strBuild.concat(Character.toString(str.charAt(c)));
+					System.out.print(strBuild+ch+"ay");
+					//strLine.deleteCharAt(mt.start());
+				}
+			 }
+			}
+			
+
+		}
+
+	}
+
+}

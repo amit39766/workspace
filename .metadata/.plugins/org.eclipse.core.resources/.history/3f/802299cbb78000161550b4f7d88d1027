@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class ProblemA {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int T=sc.nextInt();
+		for(int t=0;t<T;t++ ){
+			boolean k=(sc.nextInt()!=0);
+			int meat=sc.nextInt();
+			double poor,relatives,neighbors,owner;
+			if(k){
+				relatives=meat*2;
+				double temp=meat*3;
+				poor=temp/2;
+				double tomeat=poor*3;
+				System.out.printf("Case %d : %.0f %n %.0f %n %.0f %n",t+1,poor,relatives,tomeat);
+			}else{
+				poor=meat/3;
+				double temp=poor*2;
+				owner=temp/3;
+				relatives=owner*2;
+				System.out.printf("Case %d : %.0f %n %.0f %n %.0f %n",t+1,poor,relatives,owner);
+			}
+			
+		}
+
+	}
+
+}
+/*     1.  If total amount of meat is given then calculate
+a)    Amount for poor and needy people 
+b)    Summation of amount for relatives and neighbors 
+c)    Amount of meat the owner has got 
+
+2.   If amount of the owner is given then calculate
+a)    Amount for poor and needy people 
+b)    Summation of amount for relatives and neighbors 
+c)    Total amount of meat */

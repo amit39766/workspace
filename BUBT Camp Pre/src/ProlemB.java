@@ -1,0 +1,38 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.TreeMap;
+
+public class ProlemB {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int T=sc.nextInt();
+		
+		for(int t=0;t<T;t++ ){
+			Map<String,Integer> mp=new TreeMap<>();
+			int w=sc.nextInt();
+			int max=0;
+			String maxword="";
+			while(w-->0){
+				String word=sc.next();
+				if(!mp.containsKey(word)){
+					mp.put(word, 1);
+				}else{
+					int val=mp.get(word);
+					if(val+1>max){
+						max=val+1;
+						maxword=word;
+					}
+					mp.put(word, val+1);
+				}
+			}
+			System.out.println("Case "+(t+1)+": "+maxword);
+			
+			
+		}
+
+	}
+
+}

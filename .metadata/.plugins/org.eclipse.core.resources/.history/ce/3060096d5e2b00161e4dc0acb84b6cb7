@@ -1,0 +1,10 @@
+package takeOff;
+
+public class NumberReversing {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class uri_1021 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		double num=sc.nextDouble();
+		System.out.println(num);
+		double note[]={100,50,20,10,5,2};
+		double coin[]={1d,0.50,0.25,0.10,0.05,0.01};
+		System.out.println("NOTAS");
+		for(int i=0;i<6;i++){
+			double counter=0;
+			counter=num/note[i];
+			num=num-note[i]*counter;
+			System.out.printf("%.0f nota(s) de R$ %.2f%n",counter,note[i]);
+		}
+		System.out.println("MOEDAS");
+		for(int i=0;i<6;i++){
+			double counter=0d;
+			counter=num/coin[i];
+			num=num-coin[i]*counter;
+			System.out.printf("%.0f moeda(s) de R$ %.2f%n",counter,coin[i]);
+		}
+
+	}
+
+}

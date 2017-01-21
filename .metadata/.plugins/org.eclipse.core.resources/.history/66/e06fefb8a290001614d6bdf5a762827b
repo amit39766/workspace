@@ -1,0 +1,44 @@
+package uvaOnlineJudge;
+
+import java.util.Scanner;
+
+public class Minesweeper {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int m=sc.nextInt();
+		int fields=1;
+		while(!(n==0&&m==0)){
+			char[][] mines=new char[n+1][m+1];
+			for(int i=1;i<=n;i++){
+				mines[i]=sc.nextLine().toCharArray();
+			}
+			for(int i=1;i<=n;i++){
+				for(int j=1;j<=m;j++){
+					if(mines[i][j]=='.'){
+						addjacents=addjacentMines(i,j,mines);
+					}
+				}
+			}
+		}
+
+	}
+
+	private static char addjacentMines(int i, int j, char[][] mines) {
+		// TODO Auto-generated method stub
+		int mineCounter=0;
+		if(mines[i-1][j-1]=='*')mineCounter+=1;
+		if(mines[i-1][j]=='*')mineCounter+=1;
+		if(mines[i-1][j+1]=='*')mineCounter+=1;
+		if(mines[i][j-1]=='*')mineCounter+=1;
+		if(mines[i][j+1]=='*')mineCounter+=1;
+		if(mines[i+1][j-1]=='*')mineCounter+=1;
+		if(mines[i+1][j]=='*')mineCounter+=1;
+		if(mines[i+1][j+1]=='*')mineCounter+=1;
+		String ch=""+mineCounter;
+		return ch.charAt(0);
+	}
+
+}

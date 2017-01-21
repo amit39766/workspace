@@ -1,0 +1,126 @@
+package uvaOnlineJudge;
+//Author : Amit Chandra Sarkar
+//Daffodil International University
+//Email: amit39766@outlook.com
+import java.util.Scanner;
+import java.util.Stack;
+import java.util.ArrayList;
+
+public class uva_101 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		ArrayList<Stack<Integer>> stList=new ArrayList<>(n);
+		for(int i=0;i<n;i++){
+			stList.add(new Stack<>());
+			stList.get(i).push(i);
+		}
+		sc.nextLine();
+		String comm=sc.nextLine();
+		while(!comm.equals("quit")){
+			String[] command=comm.split(" ");
+			int a=Integer.parseInt(command[1]);
+			int b=Integer.parseInt(command[3]);
+			if(command[0].equals("move")){
+				if(command[2].equals("onto")){
+					boolean f1=true;
+					boolean f2=true;
+					for(Stack<Integer> s:stList){
+						//find up the stack which contains a
+						if(s.contains(a)&&s.contains(b))break;
+						if(s.contains(a)&&f1){
+							while(s.peek()!=a){
+								stList.get(s.peek()).push(s.pop());
+							}
+							f1=false;
+							s.pop();
+						}
+						if(s.contains(b)&&f2){
+							while(s.peek()!=b){
+								stList.get(s.peek()).push(s.pop());
+							}
+							f2=false;
+							s.push(a);
+						}
+					}
+				}
+				else{//for over operation
+					for(Stack<Integer> s:stList){
+						//find up the stack which contains a
+						if(s.contains(a)&&s.contains(b))break;
+						if(s.contains(a)){
+							while(s.peek()!=a){
+								//send to own position
+								stList.get(s.peek()).push(s.pop());
+							}
+							s.pop();
+						}
+						if(s.contains(b)){
+							s.push(a);
+						}
+					}
+				}
+			}//for pile command
+			else{
+				if(command[2].equals("onto")){
+					Stack<Integer> temp=new Stack<>();
+					for(Stack<Integer> s:stList){
+						//find up the stack which contains a
+						if(s.contains(a)&&s.contains(b))break;
+						if(s.contains(a)){
+							while(s.peek()!=a){
+								temp.push(s.pop());
+							}
+							temp.push(s.pop());
+							break;
+						}
+
+					}
+					for(Stack<Integer> s:stList){
+						if(s.contains(b)){
+							while(s.peek()!=b){
+								stList.get(s.peek()).push(s.pop());
+							}
+							while(!temp.isEmpty()){
+								s.push(temp.pop());
+							}
+						}
+					}
+				}else{//for over command
+					Stack<Integer> temp=new Stack<>();
+					for(Stack<Integer> s:stList){
+						//find up the stack which contains a
+						if(s.contains(a)&&s.contains(b))break;
+						if(s.contains(a)){
+							while(s.peek()!=a){
+								temp.push(s.pop());
+							}
+							temp.push(s.pop());
+							break;
+						}
+
+					}
+					for(Stack<Integer> s:stList){
+						if(s.contains(b)){
+							while(!temp.isEmpty()){
+								s.push(temp.pop());
+							}
+						}
+					}
+				}
+			}
+			comm=sc.nextLine();
+		}
+		for(int i=0;i<stList.size();i++){
+			System.out.print(i+":");
+			for(int j=0;j<stList.get(i).size();j++){
+				System.out.print(" "+stList.get(i).elementAt(j));
+			}
+			System.out.println();
+		}
+
+	}
+
+}
